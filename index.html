@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>sliding-puzzle</title>
+    <style>
+      .puzzle {
+        position: relative;
+        /*visibility: hidden;*/
+        width: 600px;
+        height: 400px;
+        border: 1px black solid;
+      }
+      .puzzle.ready {
+        visibility: visible;
+      }
+      .puzzle-piece {
+        position: absolute;
+        /*border: 3px red solid;*/
+        box-sizing: border-box;
+      }
+      .puzzle.ready .puzzle-piece {
+        -webkit-transition: all 200ms ease;
+        -moz-transition: all 200ms ease;
+        transition: all 200ms ease;
+      }
+      .puzzle-piece canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="js-puzzle puzzle"></div>
+      <p>
+        <a href="javascript:document.location.reload()">New Image</a>
+      </p>
+      <!--<p>
+        <a id="init-easy" href="javascript:;">New Image (Easy)</a>
+      </p>
+      <p>
+        <a id="init-medium" href="javascript:;">New Image (Medium)</a>
+      </p>
+      <p>
+        <a id="init-hard" href="javascript:;">New Image (Hard)</a>
+      </p>-->
+    </div>
+    <script src="script.js"></script>
+    <script>
+      new SlidingPuzzle();
+      /*
+      document.getElementById("init-easy").addEventListener("click", function() {
+        p = null;
+        window.p = new SlidingPuzzle({ settings: { partCounts: { columns: 2, rows: 2 } } });
+      });
+      document.getElementById("init-medium").addEventListener("click", function() {
+        p = null;
+        window.p = new SlidingPuzzle({ settings: { partCounts: { columns: 3, rows: 3 } } });
+      });
+      document.getElementById("init-hard").addEventListener("click", function() {
+        p = null;
+        window.p = new SlidingPuzzle({ settings: { partCounts: { columns: 4, rows: 4 } } });
+      });
+      */
+    </script>
+  </body>
+</html>
